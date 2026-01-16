@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Výpočet obvodu kružnice</title>
+</head>
+<body>
+
+<h1>Výpočet obvodu kružnice</h1>
+<button onclick="vypocitatObvod()">Zadat poloměr</button>
+<p id="vystup"></p>
+
+<script>
+    function vypocitatObvod() {
+        let r = parseFloat(prompt("Zadejte poloměr kružnice v cm:"));
+
+        // Ověření, zda je hodnota číslo a větší než 0
+        if (isNaN(r) || r <= 0) {
+            alert("Prosím, zadejte platné kladné číslo.");
+            return;  // Ukončí funkci, pokud je zadán neplatný vstup
+        }
+
+        let obvod = 2 * Math.PI * r; // vzorec O = 2 * π * r
+        obvod = obvod.toFixed(2); // Zaokrouhlení na dvě desetinná místa
+
+        document.getElementById("vystup").textContent =
+            "Zadaný poloměr: " + r + " cm\nObvod kružnice: " + obvod + " cm";
+
+        console.log("Zadaný poloměr: " + r + " cm");
+        console.log("Obvod kružnice: " + obvod + " cm");
+    }
+</script>
+
+</body>
+</html>
